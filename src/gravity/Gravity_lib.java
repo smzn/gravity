@@ -21,10 +21,11 @@ public class Gravity_lib {
 		
 		for(int i = 0; i < p.length; i++){
 			for(int j = 0; j < p.length; j++){
-				f[i][j] = K*p[i]*p[j]/d[i][j];
+				f[i][j] = K*Math.pow(p[i],a)*Math.pow(p[j],b)/Math.pow(d[i][j],c);
 			}
 		}
 		//行和を１に正規化
+
 		for(int i = 0; i < p.length; i++){
 			double sum = 0;
 			for(int j = 0; j < p.length; j++){
@@ -34,7 +35,6 @@ public class Gravity_lib {
 				f[i][j] /= sum;
 			}
 		}
-		
 		return f;
 		
 	}
